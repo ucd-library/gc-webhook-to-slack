@@ -27,7 +27,7 @@ async function gcWebhookToSlack(req, res) {
   const slackMessage = {
     text: `Google Cloud Alert: ${message.incident.condition_name}`,
     attachments: [{
-      color: '#ff0000', // Color of the sidebar in the Slack message, red for alert
+      color: (message.incident.state === 'closed' ? '#00ff00' : '#ff0000'), // Color of the sidebar in the Slack message, red for alert
       fields: [
         { title: "Condition", value: message.incident.condition_name, short: true },
         { title: "State", value: message.incident.state, short: true },
