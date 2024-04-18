@@ -31,7 +31,8 @@ async function gcWebhookToSlack(req, res) {
       fields: [
         { title: "Condition", value: message.incident.condition_name, short: true },
         { title: "State", value: message.incident.state, short: true },
-        { title: "Summary", value: message.incident.summary, short: false }
+        { title: "Summary", value: message.incident.summary, short: false },
+        { title: "Documentation", value: message.incident.documentation.content, short: false}
       ]
     }]
   };
