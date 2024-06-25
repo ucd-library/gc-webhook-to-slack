@@ -37,6 +37,8 @@ async function gcWebhookToSlack(req, res) {
     }]
   };
 
+  console.log('Slack Message:', slackMessage);
+
   try {
     // Sending the message to Slack
     const response = await fetch(webhookUrl, {
